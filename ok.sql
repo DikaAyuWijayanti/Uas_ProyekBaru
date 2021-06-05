@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 20, 2020 at 06:13 PM
--- Server version: 10.4.11-MariaDB
--- PHP Version: 7.2.27
+-- Waktu pembuatan: 05 Jun 2021 pada 08.18
+-- Versi server: 10.4.11-MariaDB
+-- Versi PHP: 7.4.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -19,13 +19,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `oke`
+-- Database: `ok`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `alamat`
+-- Struktur dari tabel `alamat`
 --
 
 CREATE TABLE `alamat` (
@@ -38,19 +38,16 @@ CREATE TABLE `alamat` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `alamat`
+-- Dumping data untuk tabel `alamat`
 --
 
 INSERT INTO `alamat` (`id`, `cities_id`, `detail`, `user_id`, `created_at`, `updated_at`) VALUES
-(1, 305, 'Kecamatan Ngluyu', 2, '2020-12-18 11:26:19', '2020-12-18 11:26:19'),
-(2, 22, 'Jl. Bandung No 56', 3, '2020-12-18 22:48:53', '2020-12-20 03:25:37'),
-(3, 305, 'Jl. Kertonegoro No.63', 4, '2020-12-20 02:58:08', '2020-12-20 02:58:49'),
-(4, 179, 'Jl. Kadiri No 43', 5, '2020-12-20 07:38:41', '2020-12-20 07:38:41');
+(0, 251, 'Jl.Sawo No.1A', 0, '2021-06-04 22:46:02', '2021-06-04 22:46:02');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `alamat_toko`
+-- Struktur dari tabel `alamat_toko`
 --
 
 CREATE TABLE `alamat_toko` (
@@ -62,16 +59,16 @@ CREATE TABLE `alamat_toko` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `alamat_toko`
+-- Dumping data untuk tabel `alamat_toko`
 --
 
 INSERT INTO `alamat_toko` (`id`, `city_id`, `detail`, `created_at`, `updated_at`) VALUES
-(1, 305, 'Jl. A Yani No.45', NULL, NULL);
+(1, 74, 'Jl.Merpati No.1A', NULL, NULL);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `categories`
+-- Struktur dari tabel `categories`
 --
 
 CREATE TABLE `categories` (
@@ -82,19 +79,19 @@ CREATE TABLE `categories` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `categories`
+-- Dumping data untuk tabel `categories`
 --
 
 INSERT INTO `categories` (`id`, `name`, `created_at`, `updated_at`) VALUES
-(1, 'Dress', NULL, NULL),
-(2, 'Atasan', NULL, NULL),
-(3, 'Bawahan', NULL, NULL),
-(4, 'Sepatu', NULL, NULL);
+(1, 'Sayur Buah', NULL, NULL),
+(2, 'Sayur Biji - bijian', NULL, NULL),
+(3, 'Sayur Daun', NULL, NULL),
+(4, 'Sayur Bunga', NULL, NULL);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `cities`
+-- Struktur dari tabel `cities`
 --
 
 CREATE TABLE `cities` (
@@ -107,7 +104,7 @@ CREATE TABLE `cities` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `cities`
+-- Dumping data untuk tabel `cities`
 --
 
 INSERT INTO `cities` (`id`, `province_id`, `city_id`, `title`, `created_at`, `updated_at`) VALUES
@@ -412,7 +409,7 @@ INSERT INTO `cities` (`id`, `province_id`, `city_id`, `title`, `created_at`, `up
 -- --------------------------------------------------------
 
 --
--- Table structure for table `couriers`
+-- Struktur dari tabel `couriers`
 --
 
 CREATE TABLE `couriers` (
@@ -424,7 +421,7 @@ CREATE TABLE `couriers` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `couriers`
+-- Dumping data untuk tabel `couriers`
 --
 
 INSERT INTO `couriers` (`id`, `code`, `title`, `created_at`, `updated_at`) VALUES
@@ -435,7 +432,7 @@ INSERT INTO `couriers` (`id`, `code`, `title`, `created_at`, `updated_at`) VALUE
 -- --------------------------------------------------------
 
 --
--- Table structure for table `detail_order`
+-- Struktur dari tabel `detail_order`
 --
 
 CREATE TABLE `detail_order` (
@@ -448,27 +445,16 @@ CREATE TABLE `detail_order` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `detail_order`
+-- Dumping data untuk tabel `detail_order`
 --
 
 INSERT INTO `detail_order` (`id`, `order_id`, `product_id`, `qty`, `created_at`, `updated_at`) VALUES
-(1, 1, 12, 1, '2020-12-18 11:27:06', '2020-12-18 11:27:06'),
-(2, 2, 3, 2, '2020-12-18 11:31:11', '2020-12-18 11:31:11'),
-(3, 3, 10, 1, '2020-12-18 17:08:52', '2020-12-18 17:08:52'),
-(4, 4, 12, 1, '2020-12-18 22:50:11', '2020-12-18 22:50:11'),
-(5, 5, 4, 1, '2020-12-18 23:06:52', '2020-12-18 23:06:52'),
-(6, 6, 2, 1, '2020-12-19 07:46:10', '2020-12-19 07:46:10'),
-(7, 6, 12, 1, '2020-12-19 07:46:10', '2020-12-19 07:46:10'),
-(8, 7, 5, 2, '2020-12-19 19:21:39', '2020-12-19 19:21:39'),
-(9, 8, 10, 1, '2020-12-20 02:59:42', '2020-12-20 02:59:42'),
-(10, 8, 8, 2, '2020-12-20 02:59:42', '2020-12-20 02:59:42'),
-(11, 9, 10, 2, '2020-12-20 03:26:17', '2020-12-20 03:26:17'),
-(12, 10, 3, 1, '2020-12-20 07:39:37', '2020-12-20 07:39:37');
+(0, 0, 8, 2, '2021-06-04 22:46:56', '2021-06-04 22:46:56');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `failed_jobs`
+-- Struktur dari tabel `failed_jobs`
 --
 
 CREATE TABLE `failed_jobs` (
@@ -483,7 +469,7 @@ CREATE TABLE `failed_jobs` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `keranjang`
+-- Struktur dari tabel `keranjang`
 --
 
 CREATE TABLE `keranjang` (
@@ -498,7 +484,7 @@ CREATE TABLE `keranjang` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `order`
+-- Struktur dari tabel `order`
 --
 
 CREATE TABLE `order` (
@@ -519,25 +505,16 @@ CREATE TABLE `order` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `order`
+-- Dumping data untuk tabel `order`
 --
 
 INSERT INTO `order` (`id`, `invoice`, `user_id`, `subtotal`, `no_resi`, `status_order_id`, `metode_pembayaran`, `ongkir`, `created_at`, `updated_at`, `biaya_cod`, `no_hp`, `bukti_pembayaran`, `pesan`) VALUES
-(1, 'ALV202012180626', 2, 119000, '12345', 5, 'trf', 0, '2020-12-18 11:27:06', '2020-12-18 11:31:24', 0, '087678546234', 'buktibayar/lR6NGGLo5oJqcI7r01vPxhqbLbpdz1h6zL9yPSyx.jpeg', 'kirim cepat'),
-(2, 'ALV202012180630', 2, 1468000, NULL, 6, 'cod', 0, '2020-12-18 11:31:11', '2020-12-18 17:07:42', 10000, '082332132566', NULL, 'jne'),
-(3, 'ALV202012191208', 2, 999000, '12345', 5, 'trf', 0, '2020-12-18 17:08:52', '2020-12-18 17:11:52', 0, '087678546234', 'buktibayar/iNjHnFsHvcjm63SkfKGpJidHTFHVk6fYnwv9cdgp.jpeg', 'jne'),
-(4, 'ALV202012190549', 3, 119000, '12345', 5, 'trf', 0, '2020-12-18 22:50:11', '2020-12-18 22:52:47', 0, '082332132566', 'buktibayar/N2juZcW8TQngfJl0rOmWgQIWs944cDz5NNGscyZV.jpeg', 'kirim cepat'),
-(5, 'ALV202012190606', 3, 479000, '12345', 5, 'trf', 0, '2020-12-18 23:06:52', '2020-12-18 23:15:28', 0, '081335876457', 'buktibayar/GfmMcDtPrUkqXqkYJuwsiURvOA6MnnXhMXimEptA.jpeg', 'kirim cepat'),
-(6, 'ALV202012190245', 3, 1190000, '12345', 5, 'trf', 0, '2020-12-19 07:46:10', '2020-12-19 07:51:40', 0, '087678546234', 'buktibayar/v4xbofQh4TPlqZ67BCrZj5nJ6PrSXs5MRvcZrhaF.jpeg', 'kirim kilat'),
-(7, 'ALV202012200221', 3, 1598000, '12345', 5, 'trf', 0, '2020-12-19 19:21:39', '2020-12-20 03:27:34', 0, '081335876457', 'buktibayar/mK3kMT5ouvl2hdb8VdycpvFodAbT59ILrVI56n6y.jpeg', 'warna sesuai gambar'),
-(8, 'ALV202012200959', 4, 1572000, '12345', 5, 'trf', 0, '2020-12-20 02:59:42', '2020-12-20 03:09:08', 0, '085436782496', 'buktibayar/79OuUAYEh2QYZFqFI6V94YKZXZHMLT21tPDJ8dNn.png', 'Kirim cepat'),
-(9, 'ALV202012201025', 3, 1998000, NULL, 2, 'trf', 0, '2020-12-20 03:26:17', '2020-12-20 03:27:00', 0, '083858679324', 'buktibayar/QFdtpKD2bafll9EeW03w9bnoRdJ1t4U4OWS62gqG.jpeg', 'kirim cepat'),
-(10, 'ALV202012200239', 5, 734000, '12345', 5, 'trf', 0, '2020-12-20 07:39:37', '2020-12-20 07:47:03', 0, '084536787999', 'buktibayar/Y566k85T6vxMzfBKR0i8RmGLeJk9McPNflSHivPL.png', 'kirim cepat');
+(0, 'ALV202106050546', 0, 7000, '12', 5, 'trf', 0, '2021-06-04 22:46:56', '2021-06-04 22:56:01', 0, '08755313457', 'buktibayar/7Ty0eG7zaajR0yIhLPW63N6NqHqMRr6hozlUT283.pdf', 'Diantar Cepat');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `password_resets`
+-- Struktur dari tabel `password_resets`
 --
 
 CREATE TABLE `password_resets` (
@@ -549,7 +526,7 @@ CREATE TABLE `password_resets` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `products`
+-- Struktur dari tabel `products`
 --
 
 CREATE TABLE `products` (
@@ -566,27 +543,28 @@ CREATE TABLE `products` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `products`
+-- Dumping data untuk tabel `products`
 --
 
 INSERT INTO `products` (`id`, `name`, `description`, `image`, `price`, `weigth`, `categories_id`, `created_at`, `updated_at`, `stok`) VALUES
-(1, 'Dress Jovita Brukat', 'bahan brukat tile bordir glitter\r\n            + mutiara. lapis furing bahan moscrepe import.\r\n            size L panjang 105cm', 'dress1.jpeg', 599000, 500, 1, NULL, NULL, 9),
-(2, 'Dress Joly', 'Dress Joly', 'dress2.jpeg', 796000, 700, 1, NULL, NULL, 5),
-(3, 'Dress Solfa', 'bahan moscrepe kombi katun\r\n            ld 100cm, panjang 85cm, tali hidup', 'dress3.jpeg', 734000, 400, 1, NULL, NULL, 9),
-(4, 'Nadya Blouse', 'bahan katun, model salur, \r\n            supprot busui', 'atasan1.jpeg', 479000, 300, 2, NULL, NULL, 8),
-(5, 'Klona Top', 'Klona Top', 'atasan2.jpeg', 799000, 450, 2, NULL, NULL, 9),
-(6, 'Alana Outer Cardigan', 'bahan moscrepe ld 100cm, pj 80cm', 'atasan3.jpeg', 699000, 600, 2, NULL, NULL, 12),
-(7, 'Cammomile Celana Kulot Panjang\r\n            Highwaist', 'bahan scuba, lingkar pinggang\r\n            66, lingkar pinggul 90, lingkar paha 58, \r\n            pjg 100cm', 'bawahan1.jpeg', 599000, 800, 3, NULL, NULL, 13),
-(8, 'Skirt Rok Midi Jeans Young Flat', 'bahan jeans premium ukuran 27', 'bawahan2.jpeg', 786000, 700, 3, NULL, NULL, 4),
-(9, 'Gayla Doe Pants', 'bahan vallerie', 'bawahan3.jpeg', 589000, 500, 3, NULL, NULL, 9),
-(10, 'PVN Mujigae Sepatu Sneakers', 'bahan high quality kulit sintesis', 'sepatu1.jpeg', 999000, 400, 4, NULL, NULL, 4),
-(11, 'Strappy Sepatu Hak Tali Glossy', 'bahan sintesis, tinggi heels 11 cm', 'sepatu2.jpeg', 1090000, 300, 4, NULL, '2020-12-19 04:05:48', 7),
-(12, 'Boots Wanita Ziper YKS', 'bahan suede, tinggi heels 5cm', 'sepatu3.jpeg', 1190000, 400, 4, NULL, '2020-12-20 03:03:06', 11);
+(0, 'Brokoli', 'brokoli adalah sayur dengan kepala bunga berwarna hijau yang tersusun rapat seperti cabang pohon dengan batang tebal. Sebagian besar kepala bunga tersebut dikelilingi dedaunan. Brokoli paling mirip dengan kembang kol, namun brokoli berwarna hijau, sedangkan kembang kol putih. ', 'brokoli2.jpg', 1500, 20, 4, '2021-06-04 19:08:38', '2021-06-04 19:08:38', 100),
+(1, 'Sawi ', 'Sawi hijau adalah salah satu sayuran daun populer di Indonesia. Nama lainnya adalah sawi bakso atau caisim/caisin. Jenis sawi lain yang juga kadang-kadang disebut sawi hijau adalah pakcoy/petsai atau sawi sendok.', 'Sayur sawi.jpg', 2000, 150, 3, NULL, NULL, 20),
+(2, 'Wortel', 'Wortel adalah jenis sayuran yang berwarna kuning kemerahan atau jingga kekuningan dengan tekstur yang mirip seperti kayu. Bagian yang dapat dimakan dari wortel adalah bagian umbi atau akarnya', 'wortel.jpg', 3000, 200, 1, NULL, NULL, 25),
+(3, 'Tomat', 'Tomat adalah sumber kuat antioksidan dan vitamin C yang membantu melawan radikal bebas melawan kanker.Kandungan lycopene yang tinggi pada tomat membantu mencegah kanker. Tomat mengandung kolin, potassium, serat dan vitamin C yang membantu meningkatkan fungsi jantung.', 'tomat.jpg', 1000, 200, 1, NULL, NULL, 30),
+(4, 'Cabai Rawit', 'Cabai atau cabai merah atau lombok adalah buah dan tumbuhan anggota genus Capsicum. Buahnya dapat digolongkan sebagai sayuran maupun bumbu, tergantung bagaimana digunakan. Sebagai bumbu, buah cabai yang pedas sangat populer di Asia Tenggara sebagai penguat rasa makanan.', 'cabai.jpg', 20000, 500, 2, NULL, NULL, 50),
+(5, 'Kacang Panjang', 'Kacang panjang adalah salah satu tanaman sayuran yang populer dalam kuliner Asia Tenggara dan Asia Timur. Buah polongnya dimasak sebagai sayur atau dimakan mentah sebagai lalapan. Ia tumbuh dengan cara memanjat atau melilit.', 'kacang.jpg', 3000, 250, 2, NULL, NULL, 10),
+(6, 'Kacang Polong', 'Kacang polong adalah satu dari sekian banyak jenis kacang-kacangan dengan bentuk fisik bulat, berukuran kecil, dan berwarna hijau khas yang tampak segar.', 'polong.jpg', 5000, 300, 2, NULL, '2021-06-04 19:09:30', 15),
+(7, 'Bayam', 'Bayam (Amaranthus) adalah tumbuhan yang biasa ditanam untuk dikonsumsi daunnya sebagai sayuran hijau. Tumbuhan ini berasal dari Amerika tropik namun sekarang tersebar ke seluruh dunia. Tumbuhan ini dikenal sebagai sayuran sumber zat besi yang penting bagi tubuh.', 'bayam.jpg', 1500, 145, 3, NULL, NULL, 30),
+(8, 'Jagung', 'Jagung merupakan salah satu tanaman pangan dunia yang terpenting, selain gandum dan padi. Sebagai sumber karbohidrat utama di Amerika Tengah dan Selatan, jagung juga menjadi alternatif sumber pangan di Amerika Serikat.', 'jagung.jpg', 3500, 250, 2, NULL, NULL, 43),
+(9, 'Kubis', 'Kubis (Brassica oleracea L.) merupakan tanaman semusim atau dua musim. Bentuk daunnya bulat telur sampai lonjong dan lebar seperti kipas. Sistem perakaran kubis agak dangkal, akar tunggangnya segera bercabang dan memiliki banyak akar serabut.', 'kubis.jpg', 2500, 500, 3, NULL, NULL, 10),
+(10, 'Labu Siam', 'Labu siam (Sechium edule (Jacq.) Sw.) merupakan tanaman subtropis dan termasuk ke dalam spesies cucurbitaceus yang sering digunakan sebagai bahan makanan. Tanaman ini berasal dari Meksiko dan telah dibudidayakan sejak zaman pra-Kolombia (Saade, 1996).', 'labu.jpg', 4000, 250, 1, NULL, NULL, 5),
+(11, 'Selada', 'Selada atau daun sla (Lactuca sativa) adalah tumbuhan sayur yang biasa ditanam di daerah beriklim sedang maupun daerah tropika. Kegunaan utama adalah sebagai salad.', 'selada.jpg', 3000, 100, 3, NULL, '2020-12-19 04:05:48', 40),
+(12, 'Bayam Merah', 'Bayam merah kaya akan serat yang mampu melancarkan pencernaan. Serat membantu mengatur pergerakan usus dengan membersihkan usus besar. Bayam merah membantu sembelit, mencegah kanker usus besar, diabetes dan kolesterol. Batang bayam merah terbukti bermanfaat dalam mengobati disentri', 'merah.jpg', 2500, 200, 3, NULL, '2020-12-20 03:03:06', 10);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `provinces`
+-- Struktur dari tabel `provinces`
 --
 
 CREATE TABLE `provinces` (
@@ -598,7 +576,7 @@ CREATE TABLE `provinces` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `provinces`
+-- Dumping data untuk tabel `provinces`
 --
 
 INSERT INTO `provinces` (`id`, `province_id`, `title`, `created_at`, `updated_at`) VALUES
@@ -640,7 +618,7 @@ INSERT INTO `provinces` (`id`, `province_id`, `title`, `created_at`, `updated_at
 -- --------------------------------------------------------
 
 --
--- Table structure for table `rekening`
+-- Struktur dari tabel `rekening`
 --
 
 CREATE TABLE `rekening` (
@@ -653,19 +631,19 @@ CREATE TABLE `rekening` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `rekening`
+-- Dumping data untuk tabel `rekening`
 --
 
 INSERT INTO `rekening` (`id`, `bank_name`, `atas_nama`, `no_rekening`, `created_at`, `updated_at`) VALUES
-(1, 'BRI', 'RUBY', '111122223333', NULL, NULL),
-(2, 'BRI SYARIAH', 'SAPHIERE', '222233334444', NULL, NULL),
-(3, 'BCA', 'EMERALD', '333344445555', NULL, NULL),
-(4, 'BNI', 'ALKANA', '444455556666', NULL, NULL);
+(1, 'BRI', 'Tsania', '2100137xxxx', NULL, NULL),
+(2, 'BRI SYARIAH', 'Syakir', '10929374xxxx', NULL, NULL),
+(3, 'BCA', 'Charisma', '3333212xxxx', NULL, NULL),
+(4, 'BNI', 'Maharani', '41973756xxx', NULL, NULL);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `status_order`
+-- Struktur dari tabel `status_order`
 --
 
 CREATE TABLE `status_order` (
@@ -676,7 +654,7 @@ CREATE TABLE `status_order` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `status_order`
+-- Dumping data untuk tabel `status_order`
 --
 
 INSERT INTO `status_order` (`id`, `name`, `created_at`, `updated_at`) VALUES
@@ -690,7 +668,7 @@ INSERT INTO `status_order` (`id`, `name`, `created_at`, `updated_at`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `users`
+-- Struktur dari tabel `users`
 --
 
 CREATE TABLE `users` (
@@ -706,7 +684,7 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `users`
+-- Dumping data untuk tabel `users`
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `role`, `remember_token`, `created_at`, `updated_at`) VALUES
@@ -714,190 +692,96 @@ INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `ro
 (2, 'Nio Dyah Tribuana', 'niodyah30375@gmail.com', NULL, '$2y$10$.qEr207ouyt55WWbKTofQeeATmCC9FHmkIRuT8mt57TDe6szBPGCm', 'customer', NULL, '2020-12-18 11:25:46', '2020-12-18 11:25:46'),
 (3, 'Alecia', 'alecia@gmail.com', NULL, '$2y$10$NZvCvvZJSgLJDWVZKORV6Oqo/S2gOlSA8TkJSnXyWsTMsd5/N0uJq', 'customer', NULL, '2020-12-18 22:44:13', '2020-12-18 22:44:13'),
 (4, 'Ilona Saphiere', 'saphiere24@gmail.com', NULL, '$2y$10$RUPmuGjB5Rw0YLwrFmt11.HtoyAvVG7pRLW8RbCVcNQkbVJRTFi0S', 'customer', NULL, '2020-12-20 02:54:01', '2020-12-20 02:54:01'),
-(5, 'Rasendrya', 'rasensrya76@gmail.com', NULL, '$2y$10$lhAbw7mSuaMuz3OtJRUpWuOMcD1BM9asmIjdE4kVbjxcbBkFl.poa', 'customer', NULL, '2020-12-20 07:36:20', '2020-12-20 07:36:20');
+(5, 'Rasendrya', 'rasensrya76@gmail.com', NULL, '$2y$10$lhAbw7mSuaMuz3OtJRUpWuOMcD1BM9asmIjdE4kVbjxcbBkFl.poa', 'customer', NULL, '2020-12-20 07:36:20', '2020-12-20 07:36:20'),
+(0, 'Dika Ayu', 'dika@gmail.com', NULL, '$2y$10$3ylCpY8ho3LY0ryLAUR93uv9SYZa84OAimlvO9/1x54Qh6Q16yVwK', 'customer', NULL, '2021-06-04 19:15:18', '2021-06-04 19:15:18');
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indexes for table `alamat`
+-- Indeks untuk tabel `alamat`
 --
 ALTER TABLE `alamat`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `alamat_toko`
+-- Indeks untuk tabel `alamat_toko`
 --
 ALTER TABLE `alamat_toko`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `categories`
+-- Indeks untuk tabel `categories`
 --
 ALTER TABLE `categories`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `cities`
+-- Indeks untuk tabel `cities`
 --
 ALTER TABLE `cities`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `couriers`
+-- Indeks untuk tabel `couriers`
 --
 ALTER TABLE `couriers`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `detail_order`
+-- Indeks untuk tabel `detail_order`
 --
 ALTER TABLE `detail_order`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `failed_jobs`
+-- Indeks untuk tabel `failed_jobs`
 --
 ALTER TABLE `failed_jobs`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `keranjang`
+-- Indeks untuk tabel `keranjang`
 --
 ALTER TABLE `keranjang`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `order`
+-- Indeks untuk tabel `order`
 --
 ALTER TABLE `order`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `password_resets`
+-- Indeks untuk tabel `password_resets`
 --
 ALTER TABLE `password_resets`
   ADD KEY `password_resets_email_index` (`email`);
 
 --
--- Indexes for table `products`
+-- Indeks untuk tabel `products`
 --
 ALTER TABLE `products`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `provinces`
+-- Indeks untuk tabel `provinces`
 --
 ALTER TABLE `provinces`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `rekening`
+-- Indeks untuk tabel `rekening`
 --
 ALTER TABLE `rekening`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `status_order`
+-- Indeks untuk tabel `status_order`
 --
 ALTER TABLE `status_order`
   ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `users`
---
-ALTER TABLE `users`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `users_email_unique` (`email`);
-
---
--- AUTO_INCREMENT for dumped tables
---
-
---
--- AUTO_INCREMENT for table `alamat`
---
-ALTER TABLE `alamat`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
-
---
--- AUTO_INCREMENT for table `alamat_toko`
---
-ALTER TABLE `alamat_toko`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
---
--- AUTO_INCREMENT for table `categories`
---
-ALTER TABLE `categories`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
-
---
--- AUTO_INCREMENT for table `cities`
---
-ALTER TABLE `cities`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=536;
-
---
--- AUTO_INCREMENT for table `couriers`
---
-ALTER TABLE `couriers`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
-
---
--- AUTO_INCREMENT for table `detail_order`
---
-ALTER TABLE `detail_order`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
-
---
--- AUTO_INCREMENT for table `failed_jobs`
---
-ALTER TABLE `failed_jobs`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `keranjang`
---
-ALTER TABLE `keranjang`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
-
---
--- AUTO_INCREMENT for table `order`
---
-ALTER TABLE `order`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
-
---
--- AUTO_INCREMENT for table `products`
---
-ALTER TABLE `products`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
-
---
--- AUTO_INCREMENT for table `provinces`
---
-ALTER TABLE `provinces`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
-
---
--- AUTO_INCREMENT for table `rekening`
---
-ALTER TABLE `rekening`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
-
---
--- AUTO_INCREMENT for table `status_order`
---
-ALTER TABLE `status_order`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
-
---
--- AUTO_INCREMENT for table `users`
---
-ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
